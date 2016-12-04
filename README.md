@@ -5,4 +5,4 @@ This is only an example of what a home automation web application would look lik
 
 The only working pages are the Home and Light pages.
 
-To use the application, double-click the index.html file after downloading the files.
+To use the application, open the index.html file in a browser after downloading the files.
