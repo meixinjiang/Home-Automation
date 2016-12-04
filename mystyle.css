@@ -1,0 +1,191 @@
+
+.iconbuttons{
+    width:100%;
+    background-color: #0E3F6E;
+    border: none;
+}
+
+.iconbuttons:hover{
+    background-color: #4B6E90;
+    transition: background-color 0.3s linear;
+}
+
+.iconimage{
+    width: 100%;
+    height: 100%;
+    padding-top: 10px;
+    padding-bottom:10px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#Menu {
+    position: fixed;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #0E3F6E;
+    width: 85px;
+}
+
+#Home, #Lights {
+    margin-left: 85px;
+}
+
+.homeboxlayout {
+    float: left;
+    width: 33.3%;
+    height:100%;
+}
+
+.homebox{
+    position: relative;
+    border-radius: 40px;
+    width: 350px;
+    height: 150px;
+    border: 5px solid;
+    border-color: #0E3F6E;
+    padding: 20px;
+    margin: 0 auto;
+    margin-top:70px;
+}
+
+.homebox:hover {
+    background-color: #0E3F6E;
+    cursor: pointer;
+    color: white;
+    transition: background-color 0.3s linear;
+}
+
+#title{
+    text-align: center;
+    padding-top : 15px;
+}
+
+.homeboxbuttons{
+    width:33.3%;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+h4{
+    position:relative;
+    margin-left: 33.3%;
+    text-align: center;
+}
+
+.status{
+    margin-top:12.5%;
+}
+
+.homeboxlink{
+    text-align: center;
+    margin-top: 5px;
+}
+
+p{
+  font-size:17px;
+}
+
+#popupcheckboxes{
+  margin-top: 7%;
+  margin-left:21%;
+  font-size:15px;
+}
+
+#popupbuttons{
+  margin-left:4%;
+  margin-top: 22%;
+}
+
+#popbuttons{
+  background-color: #035A6F;
+  color: #fff;
+}
+
+#popbuttons:hover{
+  background-color: #0E3F6E !important;
+}
+
+#lightRooms{
+  position: fixed;
+  height: 100%;
+  width: 300px;
+  border-right:4px solid;
+  border-color: #0E3F6E;
+}
+
+.list-group-item{
+    font-size: 20px;
+}
+
+#lightScreen{
+  position: fixed;
+  height: 100%;
+  margin-left:20%;
+  width: 74%;
+}
+
+.onoff{
+  margin-right: 5%;
+  width:100px;
+  background-color: #0E3F6E !important;
+  color: #fff !important;
+}
+
+.active:hover{
+  background-color: #0E3F6E !important;
+}
+
+.lightsettings{
+  text-align: center;
+}
+
+.lightlabel{
+  font-size: 20px;
+  margin-left: 25%;
+  padding-top: 30px;
+}
+
+.brightnesslabel{
+  margin-left:34%;
+  font-size: 15px;
+  padding-top: 20px;
+}
+
+.sliders{
+  width: 250px !important;
+  margin-left:34%;
+  display:inline-block;
+
+}
+
+.highlight{
+  background-color: #EBF5FF !important;
+}
+
+#rangeValLabel1, #rangeValLabel2, #rangeValLabel3{
+  display:inline-block;
+  margin-left:60%;
+}
+
+.settings{
+  margin-left:6%;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+     -webkit-appearance: none;
+    background-color: #0E3F6E;
+    opacity: 0.75;
+}
+
+button:focus {
+    outline: 0 !important;
+}
+
+#rangeValLabel1, #rangeValLabel2 {
+    font-style: normal;
+}

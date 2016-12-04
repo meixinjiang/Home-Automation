@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Local Data</title>
+<link rel="stylesheet" href="mystyle.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script>
+
+<script>
+
+var user = {
+    name: "Billy Weaver",
+    username: "billyW59",
+    password: "billyweaver1959"
+}
+localStorage.setItem('user', JSON.stringify(user));
+
+var lightsOn = {
+    hallway: [],
+    lounge: [],
+    kitchen: [],
+    dining: [],
+    study: [],
+    masterbed: [],
+    masterbath: [],
+    bed1: [],
+    bed2: [],
+    bed3: [],
+    bed4: [],
+    bath1: [],
+    bath2: [],
+}
+localStorage.setItem('lightsOn', JSON.stringify(lightsOn));
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

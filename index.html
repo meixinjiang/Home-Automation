@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+        <link rel="stylesheet" href="mystyle.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="index.js"></script>
+    </head>
+
+    <body>
+        <!-- left pane buttons -->
+        <div id="Menu">
+            <button type="button" class="iconbuttons"><img src="icon/Home.png" class="iconimage" onclick="showPage('Home');"></button>
+            <button type="button" class="iconbuttons"><img src="icon/Window.png" class="iconimage"></button>
+            <button type="button" class="iconbuttons"><img src="icon/Door.png" class="iconimage"></button>
+            <button type="button" class="iconbuttons"><img src="icon/Blind.png" class="iconimage"></button>
+            <button type="button" class="iconbuttons"><img src="icon/Light.png" class="iconimage" onclick="showPage('Lights');"></button>
+            <button type="button" class="iconbuttons"><img src="icon/Temperature.png" class="iconimage"></button>
+            <button type="button" class="iconbuttons"><img src="icon/Camera.png" class="iconimage"></button>
+            <button type="button" class="iconbuttons"><img src="icon/Log Out.png" class="iconimage"></button>
+        </div>
+
+        <!-- Home -->
+        <div id="Home">
+            <h3 id="title"></h3>
+            <!-- left -->
+            <div class="homeboxlayout">
+                <div class="homebox">
+                    <h4>Windows</h4>
+                    <button type="button" class="homeboxbuttons"><img src="icon/Window.png" class="iconimage"></button>
+                    <h4 class="status">4/16 Open</h4>
+                </div>
+                <p class="homeboxlink"><a href="#" onclick="return false;">Close All</a></p>
+
+                <div class="homebox" onclick="showPage('Lights');">
+                    <h4>Lights</h4>
+                    <h4 class="status" id="lightstatus"></h4>
+                    <button type="button" class="homeboxbuttons"><img src="icon/Light.png" class="iconimage"></button>
+                </div>
+                <p class="homeboxlink"><a href="#" onclick="return false;">Turn All Off</a></p>
+            </div>
+
+            <!-- middle -->
+            <div class="homeboxlayout">
+                <div class="homebox">
+                    <h4>Doors</h4>
+                    <button type="button" class="homeboxbuttons"><img src="icon/Door.png" class="iconimage" ></button>
+                    <h4 class="status">10/11 Unlocked</h4>
+                </div>
+                <p class="homeboxlink"><a href="#" onclick="return false;">Lock All</a></a>
+
+                <div class="homebox">
+                    <h4>Temperature</h4>
+                    <h4 class="status">23&degC</h4>
+                    <button type="button" class="homeboxbuttons"><img src="icon/Temperature.png" class="iconimage"></button>
+                </div>
+                <p class="homeboxlink">&nbsp</p>
+            </div>
+
+            <!-- right -->
+            <div class="homeboxlayout">
+                <div class="homebox">
+                    <h4>Blinds</h4>
+                    <h4 class="status">5/17 Open</h4>
+                    <button type="button" class="homeboxbuttons"><img src="icon/Blind.png" class="iconimage"></button>
+                </div>
+                <p class="homeboxlink"><a href="#" onclick="return false;">Close All</a></a>
+
+                <div class="homebox">
+                    <h4>Security Cameras</h4>
+                    <h4 class="status">6/6 Active</h4>
+                    <button type="button" class="homeboxbuttons"><img src="icon/Camera.png" class="iconimage"></button>
+                </div>
+                <p class="homeboxlink">&nbsp</p>
+            </div>
+        </div>
+
+        <div id="Lights">
+            <div id="lightScreen" class="mainscreen" style="display:none;">
+                <h3 id="title"><img src="icon/Light.png" height="60px" width="60px"><span id="roomtitle"></span></h3>
+
+                <label class="lightlabel">Light 1:</label>
+                <div class="settings">
+                    <div class="lightsettings">
+                        <button type="button" class="btn btn-primary onoff active" id="button1" onclick="changestate(this, 'button2');">On</button>
+                        <button type="button" class="btn btn-primary onoff disabled" id="button2" onclick="changestate(this, 'button1');">Off</button>
+                    </div>
+                    <label class="brightnesslabel">Brightness</label>
+                    <div>
+                        <input id="bright1" type="range" min="0" max="100" value="0" class="sliders" step="1" oninput="changeslider(this, 'rangeValLabel1');">
+                        <em id="rangeValLabel1">0</em>
+                    </div>
+                </div>
+
+                <label class="lightlabel">Light 2:</label>
+                <div class="settings">
+                    <div class="lightsettings">
+                        <button type="button" class="btn btn-primary onoff active" id="button3" onclick="changestate(this, 'button4');">On</button>
+                        <button type="button" class="btn btn-primary onoff disabled" id="button4" onclick="changestate(this, 'button3');">Off</button>
+                    </div>
+                    <label class="brightnesslabel">Brightness</label>
+                    <div>
+                        <input id="bright2" type="range" min="0" max="100" value="0" class="sliders" step="1" oninput="changeslider(this, 'rangeValLabel2');">
+                        <em id="rangeValLabel2">0</em>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="lightRooms">
+                <div class="list-group">
+                    <a href="#" class="list-group-item" id="hallway" onclick="showMainscreen(this, 'lightScreen')">Hallway</a>
+                    <a href="#" class="list-group-item" id="lounge" onclick="showMainscreen(this, 'lightScreen');">Lounge</a>
+                    <a href="#" class="list-group-item" id="kitchen" onclick="showMainscreen(this, 'lightScreen');">Kitchen</a>
+                    <a href="#" class="list-group-item" id="dining" onclick="showMainscreen(this, 'lightScreen');">Dining Room</a>
+                    <a href="#" class="list-group-item" id="study" onclick="showMainscreen(this, 'lightScreen');">Study</a>
+                    <a href="#" class="list-group-item" id="masterbed" onclick="showMainscreen(this, 'lightScreen');">Master Bedroom</a>
+                    <a href="#" class="list-group-item" id="masterbath" onclick="showMainscreen(this, 'lightScreen');">Master Bathroom</a>
+                    <a href="#" class="list-group-item" id="bed1" onclick="showMainscreen(this, 'lightScreen');">Bedroom 1</a>
+                    <a href="#" class="list-group-item" id="bed2" onclick="showMainscreen(this, 'lightScreen');">Bedroom 2</a>
+                    <a href="#" class="list-group-item" id="bed3" onclick="showMainscreen(this, 'lightScreen');">Bedroom 3</a>
+                    <a href="#" class="list-group-item" id="bed4" onclick="showMainscreen(this, 'lightScreen');">Bedroom 4</a>
+                    <a href="#" class="list-group-item" id="bath1" onclick="showMainscreen(this, 'lightScreen');">Bathroom 1</a>
+                    <a href="#" class="list-group-item" id="bath2" onclick="showMainscreen(this, 'lightScreen');">Bathroom 2</a>
+                </div>
+            </div>
+
+        </div>
+
+        <script src="index.js"></script>
+
+    </body>
+</html>
